@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import './BlogCard.css'
+import './BlogCards.css'
 
-const BlogCard = () => {
+const BlogCards = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allContentfulPost {
@@ -19,7 +19,7 @@ const BlogCard = () => {
   `)
   const { edges } = data.allContentfulPost
 
-  return edges.map(({ node: post }) => (
+  return edges.reverse().map(({ node: post }) => (
     <article className="blog-card" key={post.id}>
       <h3 className="blog-card__headline">{post.title}</h3>
       <p className="blog-card__description">{post.shortDescription}</p>
@@ -31,4 +31,4 @@ const BlogCard = () => {
   ))
 }
 
-export default BlogCard
+export default BlogCards

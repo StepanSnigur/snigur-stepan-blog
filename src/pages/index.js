@@ -1,14 +1,14 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
 
-import BlogCard from '../components/BlogCard/BlogCard'
+import BlogCards from '../components/BlogCards/BlogCards'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <BlogCard title={"asdf"} content={"aksjdghkjfdncnmvjdsf"} postId={123874} />
+    <BlogCards />
   </Layout>
 )
 
