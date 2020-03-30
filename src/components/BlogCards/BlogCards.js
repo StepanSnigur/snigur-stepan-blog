@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import './BlogCards.css'
 
-const BlogCards = () => {
+const BlogCards = ({ postSearchTerm }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allContentfulPost {
@@ -19,7 +19,8 @@ const BlogCards = () => {
   `)
   const { edges } = data.allContentfulPost
 
-  return edges.reverse().map(({ node: post }) => (
+  const filteredPosts = edges.filter(({ node: post }) => post.title.toLowerCase().includes(postSearchTerm.toLowerCase()))
+  return filteredPosts.map(({ node: post }) => (
     <article className="blog-card" key={post.id}>
       <h3 className="blog-card__headline">{post.title}</h3>
       <p className="blog-card__description">{post.shortDescription}</p>

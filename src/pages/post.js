@@ -13,7 +13,7 @@ const PostPage = ({ data }) => {
       <p className="post-description" dangerouslySetInnerHTML={{__html: currentPost.description.description}} />
 
       <Link className="post-link" to="/">
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24"
              className="post-link__arrow" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
              style={{verticalAlign: 'middle'}}
         >
