@@ -5,11 +5,11 @@ import './BlogCards.css'
 const BlogCards = ({ postSearchTerm }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allContentfulPost(sort: {fields: createdAt, order: DESC}) {
+      allContentfulPost(sort: {fields: createdAt, order: DESC}, limit: 40) {
         edges {
           node {
             id
-            createdAt(formatString: "MMMM Do, YYYY", , locale: "ru-RU")
+            createdAt(formatString: "MMMM Do, YYYY", locale: "ru-RU")
             title
             shortDescription
           }

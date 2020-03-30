@@ -10,6 +10,7 @@ const PostPage = ({ data }) => {
   return (
     <Layout>
       <h1 className="post-title">{currentPost.title}</h1>
+      <span className="post-release-date">Выпущено: {currentPost.createdAt}</span>
       <p className="post-description" dangerouslySetInnerHTML={{__html: currentPost.description.description}} />
 
       <Link className="post-link" to="/">
@@ -26,7 +27,7 @@ const PostPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query GetPostById($id: String!) {
+  query GetPostById($id: String) {
     allContentfulPost(filter: {id: {eq: $id}}) {
       edges {
         node {
