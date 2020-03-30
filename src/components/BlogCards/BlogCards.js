@@ -5,7 +5,7 @@ import './BlogCards.css'
 const BlogCards = ({ postSearchTerm }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allContentfulPost {
+      allContentfulPost(sort: {fields: createdAt, order: DESC}) {
         edges {
           node {
             id
