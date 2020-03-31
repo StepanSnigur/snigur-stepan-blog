@@ -11,7 +11,7 @@
 .posts-search__input, .posts-search__button {
     border: none;
     border-radius: 4px;
-    padding: 0 5px;
+    padding: 0 15px;
     background: #232129;
     color: rgba(255, 255, 255, .7);
 }
