@@ -1,9 +1,9 @@
 .blog-card {
     position: relative;
     width: 720px;
-    height: 230px;
+    min-height: 230px;
     margin: 0 auto;
-    padding: 3rem;
+    padding: 2.3rem 3rem;
     margin-bottom: 15px;
     border-radius: 5px;
     background: #232129;
