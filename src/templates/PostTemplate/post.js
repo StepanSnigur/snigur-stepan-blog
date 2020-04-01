@@ -20,7 +20,7 @@ const PostPage = ({ data, location }) => {
       <SEO title={currentPost.title} />
       <h1 className="post-title">{currentPost.title}</h1>
       <span className="post-release-date">Выпущено: {currentPost.createdAt}</span>
-      <p className="post-description" dangerouslySetInnerHTML={{__html: currentPost.description.description}} />
+      <div className="post-description" dangerouslySetInnerHTML={{__html: currentPost.description.description}} />
 
       <a className="post-link" href="/" onClick={goBack}>
         <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24"
