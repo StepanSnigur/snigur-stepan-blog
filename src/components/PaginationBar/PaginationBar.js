@@ -14,9 +14,13 @@ const PaginationBar = ({ pagesCount }) => {
   const goToPage = page => {
     page === 0 ? navigate('/') : navigate(`/blog/${page}`)
   }
-  const currentPage = window.location.href.match(/\d+$/g) ?
-    window.location.href.match(/\d+$/g)[0] :
-    0
+
+  let currentPage
+  if (global.window) {
+    currentPage = window.location.href.match(/\d+$/g) ?
+      window.location.href.match(/\d+$/g)[0] :
+      0
+  }
 
   return (
     <div className="pagination-bar">
