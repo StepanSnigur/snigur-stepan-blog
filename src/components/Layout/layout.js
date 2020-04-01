@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import Header from '../header'
+import Header from '../Header/header'
 import './layout.css'
 
 const Layout = ({ children }) => {
@@ -23,10 +23,9 @@ const Layout = ({ children }) => {
         <main className="main-style">{children}</main>
         <footer className="main-footer">
           <div className="main-footer__links">
-            <Link to="/">Main page</Link>
-            <Link to="/">Main page</Link>
-            <Link to="/">Main page</Link>
-            <Link to="/">Main page</Link>
+            <Link to="/">Главная</Link>
+            <Link to="/about">Обо мне</Link>
+            <a href="https://snigur-stepan.site" target="_blank">Мой сайт</a>
           </div>
         </footer>
       </div>
