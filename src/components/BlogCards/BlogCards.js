@@ -14,7 +14,11 @@ const BlogCards = ({ postSearchTerm, posts }) => {
       <div className="blog-card__date">
         <h5>{post.createdAt}</h5>
       </div>
-      <Link className="blog-card__link" to={`/post/${post.id}`} />
+      <Link
+        className="blog-card__link"
+        to={`/post/${post.id}`}
+        state={{ isRedirectFromBlog: true }}
+      />
     </article>
   ))
 }
