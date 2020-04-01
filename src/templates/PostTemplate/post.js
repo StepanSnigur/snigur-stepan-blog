@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql, navigate } from 'gatsby'
 
-import SEO from '../components/seo'
-import Layout from '../components/Layout/layout'
-import '../pages-styles/post-page.css'
+import SEO from '../../components/seo'
+import Layout from '../../components/Layout/layout'
+import './post.css'
 
 const PostPage = ({ data, location }) => {
   const currentPost = data.allContentfulPost.edges[0].node
@@ -36,21 +36,21 @@ const PostPage = ({ data, location }) => {
 }
 
 export const query = graphql`
-  query GetPostById($id: String) {
-    allContentfulPost(filter: {id: {eq: $id}}) {
-      edges {
-        node {
-          id
-          createdAt(formatString: "MMMM Do, YYYY", locale: "ru-RU")
-          title
-          description {
-            id
-            description
-          }
+    query GetPostById($id: String) {
+        allContentfulPost(filter: {id: {eq: $id}}) {
+            edges {
+                node {
+                    id
+                    createdAt(formatString: "MMMM Do, YYYY", locale: "ru-RU")
+                    title
+                    description {
+                        id
+                        description
+                    }
+                }
+            }
         }
-      }
     }
-  }
 `
 
 export default PostPage

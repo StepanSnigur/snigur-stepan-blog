@@ -32,7 +32,7 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach(({ node }) => {
       createPage({
         path: `/post/${node.id}`,
-        component: path.resolve(`src/pages/post.js`),
+        component: path.resolve(`src/templates/PostTemplate/post.js`),
         context: {
           id: node.id
         }
