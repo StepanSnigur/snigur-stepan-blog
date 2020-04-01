@@ -1,23 +1,10 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 import './BlogCards.css'
 
-const BlogCards = ({ postSearchTerm }) => {
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      allContentfulPost(sort: {fields: createdAt, order: DESC}, limit: 40) {
-        edges {
-          node {
-            id
-            createdAt(formatString: "MMMM Do, YYYY", locale: "ru-RU")
-            title
-            shortDescription
-          }
-        }
-      }
-    }
-  `)
-  const { edges } = data.allContentfulPost
+const BlogCards = ({ postSearchTerm, posts }) => {
+  const { edges } = posts.allContentfulPost
 
   const filteredPosts = edges.filter(({ node: post }) => post.title.toLowerCase().includes(postSearchTerm.toLowerCase()))
   return filteredPosts.map(({ node: post }) => (
@@ -30,6 +17,11 @@ const BlogCards = ({ postSearchTerm }) => {
       <Link className="blog-card__link" to={`/post/${post.id}`} />
     </article>
   ))
+}
+
+BlogCards.propTypes = {
+  postSearchTerm: PropTypes.string,
+  posts: PropTypes.object.isRequired
 }
 
 export default BlogCards

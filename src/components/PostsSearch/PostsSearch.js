@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './PostSearch.css'
 
@@ -9,6 +10,10 @@ const PostsSearch = ({ onChangePostSearchTerm }) => {
       <button className="posts-search__button">Search by tags</button>
     </div>
   )
+}
+
+PostsSearch.propTypes = {
+  onChangePostSearchTerm: PropTypes.func
 }
 
 export default PostsSearch

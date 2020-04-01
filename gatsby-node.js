@@ -1,4 +1,5 @@
 const path = require(`path`);
+const postsPerPage = 30
 
 const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
   resolve(
@@ -26,7 +27,9 @@ exports.createPages = ({ actions, graphql }) => {
       }
   `)
   .then(result => {
-    result.data.allContentfulPost.edges.forEach(({ node }) => {
+    const posts = result.data.allContentfulPost.edges
+
+    posts.forEach(({ node }) => {
       createPage({
         path: `/post/${node.id}`,
         component: path.resolve(`src/pages/post.js`),
@@ -35,5 +38,31 @@ exports.createPages = ({ actions, graphql }) => {
         }
       })
     })
+
+    const numPages = Math.ceil(posts.length / postsPerPage)
+    Array.from({ length: numPages }).forEach((post, i) => {
+      i !== 0 && createPage({
+        path: `/blog/${i}`,
+        component: path.resolve("./src/pages/index.js"),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage
+        }
+      })
+    })
   })
-};
+}
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  if (page.path === '/') {
+    deletePage(page)
+    createPage({
+      ...page,
+      context: {
+        limit: postsPerPage,
+        skip: 0
+      }
+    })
+  }
+}
