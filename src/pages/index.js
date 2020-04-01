@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home"/>
+      <SEO title="Главная"/>
       <PostsSearch onChangePostSearchTerm={handlePostSearchTerm} />
       <BlogCards postSearchTerm={postSearchTerm} posts={data} />
       <PaginationBar pagesCount={Math.ceil(data.pages.edges.length / 30)} />

@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, navigate } from 'gatsby'
 
+import SEO from '../components/seo'
 import Layout from '../components/Layout/layout'
 import '../pages-styles/post-page.css'
 
@@ -16,6 +17,7 @@ const PostPage = ({ data, location }) => {
 
   return (
     <Layout>
+      <SEO title={currentPost.title} />
       <h1 className="post-title">{currentPost.title}</h1>
       <span className="post-release-date">Выпущено: {currentPost.createdAt}</span>
       <p className="post-description" dangerouslySetInnerHTML={{__html: currentPost.description.description}} />
