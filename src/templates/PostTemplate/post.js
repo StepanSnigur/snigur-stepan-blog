@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, navigate } from 'gatsby'
+import { DiscussionEmbed } from "disqus-react"
 
 import SEO from '../../components/seo'
 import Layout from '../../components/Layout/layout'
@@ -31,6 +32,13 @@ const PostPage = ({ data, location }) => {
         </svg>
         Назад
       </a>
+      <DiscussionEmbed
+        shortname={process.env.GATSBY_DISQUS_NAME}
+        config={{
+          identifier: currentPost.id,
+          title: currentPost.title
+        }}
+      />
     </Layout>
   )
 }
