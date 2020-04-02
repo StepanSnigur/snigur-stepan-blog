@@ -36,7 +36,8 @@ const PostPage = ({ data, location }) => {
         shortname={process.env.GATSBY_DISQUS_NAME}
         config={{
           identifier: currentPost.id,
-          title: currentPost.title
+          title: currentPost.title,
+          url: window && window.location.href
         }}
       />
     </Layout>
