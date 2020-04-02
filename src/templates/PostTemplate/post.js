@@ -37,7 +37,7 @@ const PostPage = ({ data, location }) => {
         config={{
           identifier: currentPost.id,
           title: currentPost.title,
-          url: window && window.location.href
+          url: location.href
         }}
       />
     </Layout>
