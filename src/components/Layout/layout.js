@@ -6,7 +6,7 @@ import Header from '../Header/header'
 import './layout.css'
 
 const Layout = ({ children, isRedirectToMainPage }) => {
-  const [colorTheme, changeColorTheme] = useState('dark')
+  const [colorTheme, changeColorTheme] = useState('light')
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -18,7 +18,7 @@ const Layout = ({ children, isRedirectToMainPage }) => {
   `)
 
   useLayoutEffect(() => {
-    changeColorTheme(localStorage.getItem('colorTheme'))
+    changeColorTheme(localStorage.getItem('colorTheme') || 'light')
   }, [])
   useEffect(() => {
     localStorage.setItem('colorTheme', colorTheme)
