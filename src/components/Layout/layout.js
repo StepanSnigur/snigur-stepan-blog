@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Header from '../Header/header'
 import './layout.css'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, isRedirectToMainPage }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} isRedirectToMainPage={isRedirectToMainPage} />
       <div style={{background: `#131217`, minHeight: `100vh`}}>
         <main className="main-style">{children}</main>
         <footer className="main-footer">
@@ -35,6 +35,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  isRedirectToMainPage: PropTypes.bool
 }
 
 export default Layout

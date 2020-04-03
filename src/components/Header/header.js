@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import './header.css'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, isRedirectToMainPage = false }) => (
   <header style={{background: `rebeccapurple`}}>
     <div className="header-container">
       <h1>
@@ -11,13 +11,18 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <Link to="/about" className="header-container__link">Обо мне</Link>
+      {
+        isRedirectToMainPage ?
+          <Link to="/" className="header-container__link">На главную</Link> :
+          <Link to="/about" className="header-container__link">Обо мне</Link>
+      }
     </div>
   </header>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  isRedirectToMainPage: PropTypes.bool
 }
 
 Header.defaultProps = {
