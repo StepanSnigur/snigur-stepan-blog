@@ -6,28 +6,24 @@
     padding: 2.3rem 3rem;
     margin-bottom: 15px;
     border-radius: 5px;
-    background: #232129;
-
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -ms-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
+    background: var(--post-card-bg);
+    transition-property: transform;
+    transition-duration: .3s;
 }
 .blog-card:hover {
     transform: translateY(-0.25rem);
     box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px, rgba(71, 63, 79, 0.16) 0px 8px 16px;
 }
 .blog-card__headline {
-    color: #fff;
+    color: var(--post-card-title-color);
     font-size: 1.5rem;
 }
 .blog-card__description {
-    color: rgba(255, 255, 255, .7);
+    color: var(--light-text-color);
     margin-bottom: 1.5rem;
 }
 .blog-card__date {
-    color: rgba(255, 255, 255, .7);
+    color: var(--light-text-color);
     font-weight: 100;
 }
 .blog-card__link {

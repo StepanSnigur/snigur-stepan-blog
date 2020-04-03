@@ -1,11 +1,11 @@
 .about-page {
-    color: #fff;
+    color: var(--light-text-color);
     font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .about-page > h1 {
     margin-bottom: 2.5rem;
     font-size: 3.375rem;
-    color: rgba(255, 255, 255, .8);
+    color: var(--light-text-color);
 }
 .about-page a {
     text-decoration: none;

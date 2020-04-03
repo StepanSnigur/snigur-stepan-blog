@@ -3,30 +3,46 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import './header.css'
 
-const Header = ({ siteTitle, isRedirectToMainPage = false }) => (
-  <header style={{background: `rebeccapurple`}}>
-    <div className="header-container">
-      <h1>
-        <Link to="/" className="header-container__siteTitle">
-          {siteTitle}
-        </Link>
-      </h1>
-      {
-        isRedirectToMainPage ?
-          <Link to="/" className="header-container__link">На главную</Link> :
-          <Link to="/about" className="header-container__link">Обо мне</Link>
-      }
-    </div>
-  </header>
-)
+import SunImg from '../../images/sun.png'
+import MoonImg from '../../images/moon.png'
+
+const Header = ({ siteTitle, isRedirectToMainPage = false, colorTheme, changeColorTheme }) => {
+  return (
+    <header style={{ background: `rebeccapurple` }}>
+      <div className="header-container">
+        <h1>
+          <Link to="/" className="header-container__siteTitle">
+            {siteTitle}
+          </Link>
+        </h1>
+        <div className="header-container__links">
+          <button className="change-colorTheme-btn" onClick={changeColorTheme}>
+            {
+              colorTheme === 'dark' ?
+                <img src={MoonImg} alt="темная тема"/> :
+                <img src={SunImg} alt="светлая тема"/>
+            }
+          </button>
+          {
+            isRedirectToMainPage ?
+              <Link to="/" className="header-container__link">На главную</Link> :
+              <Link to="/about" className="header-container__link">Обо мне</Link>
+          }
+        </div>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  isRedirectToMainPage: PropTypes.bool
+  isRedirectToMainPage: PropTypes.bool,
+  colorTheme: PropTypes.string.isRequired,
+  changeColorTheme: PropTypes.func.isRequired
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: ``
 }
 
 export default Header

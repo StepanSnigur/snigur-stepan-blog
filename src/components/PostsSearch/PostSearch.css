@@ -12,8 +12,8 @@
     border: none;
     border-radius: 4px;
     padding: 0 15px;
-    background: #232129;
-    color: rgba(255, 255, 255, .7);
+    background: var(--post-card-bg);
+    color: var(--light-text-color);
 }
 .posts-search__button {
     cursor: pointer;

@@ -13,9 +13,24 @@
     color: white;
     text-decoration: none;
 }
+.header-container__links {
+    display: flex;
+    align-items: center;
+}
+.change-colorTheme-btn {
+    border: none;
+    background: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.change-colorTheme-btn img {
+    margin: 0;
+    padding: 0;
+}
 .header-container__link {
+    display: block;
     width: 140px;
-    height: 35px;
+    height: 100%;
     border-radius: 5px;
     line-height: 35px;
     text-align: center;
