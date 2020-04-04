@@ -1,20 +1,17 @@
 .posts-search {
+    display: block;
     width: 720px;
+    height: 40px;
     margin: 0 auto;
     margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: 5fr 2fr;
-    grid-template-rows: 40px;
-    grid-gap: 20px;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-.posts-search__input, .posts-search__button {
+.posts-search__input {
+    width: 100%;
+    height: 100%;
     border: none;
     border-radius: 4px;
     padding: 0 15px;
     background: var(--post-card-bg);
     color: var(--light-text-color);
-}
-.posts-search__button {
-    cursor: pointer;
 }
