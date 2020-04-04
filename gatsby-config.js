@@ -7,8 +7,10 @@ module.exports = {
     title: `Snigur Stepan blog`,
     description: `Личный блог Снигур Степана. Здесь я размещаю различные гайды, полезные и интересные статьи. В моем блоге в основном содержатся статьи посвещенные front-end тематике. Приятного времяпрепровождения!`,
     author: `@SnigurStepan`,
+    siteUrl: `https://snigur-stepan-blog.netlify.com`
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
