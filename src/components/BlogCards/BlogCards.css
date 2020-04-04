@@ -36,3 +36,19 @@
     z-index: 1;
     cursor: pointer;
 }
+
+@media screen and (max-width: 790px) {
+    .blog-card {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .blog-card {
+        padding: 1.3rem 1rem;
+    }
+}
+@media screen and (max-width: 350px) {
+    .blog-card {
+        width: 97%;
+    }
+}

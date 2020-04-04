@@ -15,3 +15,14 @@
     background: var(--post-card-bg);
     color: var(--light-text-color);
 }
+
+@media screen and (max-width: 790px) {
+    .posts-search {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 350px) {
+    .posts-search {
+        width: 97%;
+    }
+}

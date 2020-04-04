@@ -42,3 +42,12 @@
     left: -25px;
     transform: translateY(-50%);
 }
+
+@media screen and (max-width: 1000px) {
+    .post-link {
+        padding-left: 20px;
+    }
+    .post-link__arrow {
+        left: -3px;
+    }
+}
