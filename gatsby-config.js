@@ -33,6 +33,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
