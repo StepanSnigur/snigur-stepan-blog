@@ -25,7 +25,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `snigur-stepan-blog`,
-        short_name: `st-blog`,
+        short_name: `snigur stepan blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
