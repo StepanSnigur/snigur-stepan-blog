@@ -403,7 +403,7 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
+  background: var(--code-bg-color);
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
@@ -590,7 +590,7 @@ td:last-child {
 }
 tt,
 code {
-  background-color: hsla(0, 0%, 0%, 0.04);
+  background-color: var(--code-bg-color);
   border-radius: 3px;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
@@ -625,6 +625,7 @@ pre tt:after {
     --post-card-bg: #232129;
     --post-card-title-color: #fff;
     --light-text-color: rgba(255, 255, 255, .7);
+    --code-bg-color: hsla(0, 0%, 0%, 0.94);
     --post-text-color: #d9d7e0;
     --title-color: #000;
 }
@@ -633,6 +634,7 @@ pre tt:after {
     --post-card-bg: #dcded6;
     --post-card-title-color: #000;
     --light-text-color: rgba(0, 0, 0, .7);
+    --code-bg-color: hsla(0, 0%, 0%, 0.04);;
     --post-text-color: #36313d;
     --title-color: #000;
 }
