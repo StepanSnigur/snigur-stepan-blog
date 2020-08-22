@@ -6,7 +6,7 @@ import './header.css'
 import SunImg from '../../images/sun.png'
 import MoonImg from '../../images/moon.png'
 
-const Header = ({ siteTitle, isRedirectToMainPage = false, colorTheme, changeColorTheme }) => {
+const Header = ({ siteTitle, isRedirectToMainPage = false, darkTheme, changeColorTheme }) => {
   return (
     <header style={{ background: `rebeccapurple` }}>
       <div className="header-container">
@@ -18,9 +18,9 @@ const Header = ({ siteTitle, isRedirectToMainPage = false, colorTheme, changeCol
         <div className="header-container__links">
           <button className="change-colorTheme-btn" onClick={changeColorTheme}>
             {
-              colorTheme === 'dark' ?
-                <img src={MoonImg} alt="темная тема"/> :
-                <img src={SunImg} alt="светлая тема"/>
+              darkTheme ?
+              <img src={MoonImg} alt="темная тема"/> :
+              <img src={SunImg} alt="светлая тема"/>
             }
           </button>
           {
@@ -37,7 +37,7 @@ const Header = ({ siteTitle, isRedirectToMainPage = false, colorTheme, changeCol
 Header.propTypes = {
   siteTitle: PropTypes.string,
   isRedirectToMainPage: PropTypes.bool,
-  colorTheme: PropTypes.string.isRequired,
+  darkTheme: PropTypes.bool.isRequired,
   changeColorTheme: PropTypes.func.isRequired
 }
 
